@@ -10,35 +10,35 @@ head(activity)
 activity$steps<-as.numeric(activity$steps)
 sapply(activity,class)
 
-##Create Histogram
+## Create Histogram
 hist(activity$steps,xlab="Steps",main="Total Number of Steps Taken Each Day",)
-##What is mean of steps
+## What is mean of steps
 mean(activity$steps,na.rm=TRUE)
 
-##what is median of steps
+## What is median of steps
 median(activity$steps,na.rm=TRUE)
 activity$date<-as.POSIXct(activity$date)
 
-##Create time series plot
+## Create time series plot
 plot(activity$interval,activity$steps,type="l",main="Time Series Plot of Number of Steps per Time Interval",xlab="Interval",ylab="Number of Steps")
 
-##What is interval with max steps
+## What is interval with max steps
 subset(activity,steps==max(activity$steps,na.rm=TRUE))
 
-##what is total number of missing values
+## What is total number of missing values
 sum(is.na(activity))
 
 ## Imputing missing values
 NA_activity<-activity
 NA_activity[is.na(NA_activity)] <- mean(activity$steps,na.rm=TRUE)
 
-##Make histogram of new data.frame with filled in missing values
+## Make histogram of new data.frame with filled in missing values
 hist(NA_activity$steps,xlab="Steps",main="Total Number of Steps Taken Each Day",)
 
-##What is mean of steps
+## What is mean of steps
 mean(NA_activity$steps,na.rm=TRUE)
 
-##hat is median of steps
+## What is median of steps
 median(NA_activity$steps,na.rm=TRUE)
 
 ## Are there differences in activity patterns between weekdays and weekends?
