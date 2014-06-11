@@ -167,12 +167,15 @@ sapply(activity,class)</p>
 
 <h2>What is mean number of steps?</h2>
 
-<p>mean(activity$steps,na.rm=TRUE)</p>
+<p>mean(activity$steps,na.rm=TRUE)
+[1] 37.3826</p>
 
 <h2>What is median of steps?</h2>
 
 <p>median(activity$steps,na.rm=TRUE)
-activity$date&lt;-as.POSIXct(activity$date)</p>
+[1] 0</p>
+
+<p>activity$date&lt;-as.POSIXct(activity$date)</p>
 
 <h2>Create time series plot.</h2>
 
@@ -184,7 +187,9 @@ activity$date&lt;-as.POSIXct(activity$date)</p>
 
 <h2>What is total number of missing values?</h2>
 
-<p>sum(is.na(activity))</p>
+<p>sum(is.na(activity))
+      steps       date interval
+16492   806 2012-11-27      615</p>
 
 <h2>Imputing missing values</h2>
 
@@ -197,11 +202,13 @@ NA_activity[is.na(NA_activity)] &lt;- mean(activity$steps,na.rm=TRUE)</p>
 
 <h2>What is mean number of steps taken?</h2>
 
-<p>mean(NA_activity$steps,na.rm=TRUE)</p>
+<p>mean(NA_activity$steps,na.rm=TRUE)
+[1] 37.3826</p>
 
 <h2>What is median of steps taken?</h2>
 
-<p>median(NA_activity$steps,na.rm=TRUE)</p>
+<p>median(NA_activity$steps,na.rm=TRUE)
+[1] 0</p>
 
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
 
