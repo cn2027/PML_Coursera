@@ -15,10 +15,12 @@ hist(activity$steps,xlab="Steps",main="Total Number of Steps Taken Each Day")
 
 ## What is mean number of steps?
 mean(activity$steps,na.rm=TRUE)
+
 [1] 37.3826
 
 ## What is median of steps?
 median(activity$steps,na.rm=TRUE)
+
 [1] 0
 
 activity$date<-as.POSIXct(activity$date)
@@ -28,12 +30,14 @@ plot(activity$interval,activity$steps,type="l",main="Time Series Plot of Number 
 
 ## What is interval with max steps?
 subset(activity,steps==max(activity$steps,na.rm=TRUE))
+
       steps       date interval
 16492   806 2012-11-27      615
 
 ## What is total number of missing values?
 sum(is.na(activity))
-[1] 2304
+
+#[1] 2304
 
 ## Imputing missing values
 NA_activity<-activity
@@ -44,10 +48,14 @@ hist(NA_activity$steps,xlab="Steps",main="Total Number of Steps Taken Each Day",
 
 ## What is mean number of steps taken?
 mean(NA_activity$steps,na.rm=TRUE)
+
 [1] 37.3826
+
 ## What is median of steps taken?
 median(NA_activity$steps,na.rm=TRUE)
+
 [1] 0
+
 ## Are there differences in activity patterns between weekdays and weekends?
 install.packages("ggplot2")
 require(ggplot2)
