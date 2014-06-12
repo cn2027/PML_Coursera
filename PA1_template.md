@@ -28,11 +28,12 @@ plot(activity$interval,activity$steps,type="l",main="Time Series Plot of Number 
 
 ## What is interval with max steps?
 subset(activity,steps==max(activity$steps,na.rm=TRUE))
+      steps       date interval
+16492   806 2012-11-27      615
 
 ## What is total number of missing values?
 sum(is.na(activity))
-      steps       date interval
-16492   806 2012-11-27      615
+[1] 2304
 
 ## Imputing missing values
 NA_activity<-activity
