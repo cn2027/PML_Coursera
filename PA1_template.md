@@ -41,6 +41,7 @@ sum(is.na(activity))
 
 ## Imputing missing values
 NA_activity<-activity
+
 NA_activity[is.na(NA_activity)] <- mean(activity$steps,na.rm=TRUE)
 
 ## Make histogram of new data.frame with filled in missing values.
